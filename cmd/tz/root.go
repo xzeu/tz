@@ -16,14 +16,7 @@ import (
 var CmdRoot = &cobra.Command{
 	Use:     "tz",
 	Example: "tz new demo-api",
-	Short:   " ██████████ ████████
-	░░░░░██░░░ ░░░░░░██
-	░██         ██
-	░██        ██
-	░██       ██
-	░██      ██
-	░██     ████████
-	░░     ░░░░░░░░ ",
+	Short:   " \n██████████ ████████\n	░░░░░██░░░ ░░░░░░██\n	░██         ██\n	░██        ██\n	░██       ██\n	░██      ██\n	░██     ████████\n	░░     ░░░░░░░░ ",
 	Version: fmt.Sprintf("██████████ ████████\n\t░░░░░██░░░ ░░░░░░██\n\t░██         ██\n\t░██        ██\n\t░██       ██\n\t░██      ██\n\t░██     ████████\n\t░░     ░░░░░░░░ Tz%s - Copyright (c) 2023-2025 Tz\nReleased under the MIT License.\n\n", config.Version),
 }
 
