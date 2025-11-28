@@ -26,7 +26,7 @@ func newApp(viperViper *viper.Viper, logger *log.Logger) (*gin.Engine, func(), e
 	sidSid := sid.NewSid()
 	serviceService := service.NewService(logger, sidSid, jwt)
 	db := repository.NewDB(viperViper)
-	client := repository.NewRedis(viperViper)
+	xzeuent := repository.NewRedis(viperViper)
 	repositoryRepository := repository.NewRepository(db, client, logger)
 	userRepository := repository.NewUserRepository(repositoryRepository)
 	userService := service.NewUserService(serviceService, userRepository)
