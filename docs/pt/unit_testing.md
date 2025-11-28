@@ -1,11 +1,11 @@
 ## Documentação
-* [Guia do Usuário](https://github.com/go-nunu/nunu/blob/main/docs/pt/guide.md)
-* [Arquitetura](https://github.com/go-nunu/nunu/blob/main/docs/pt/architecture.md)
-* [Tutorial de Início Rápido](https://github.com/go-nunu/nunu/blob/main/docs/pt/tutorial.md)
-* [Teste de Unidade](https://github.com/go-nunu/nunu/blob/main/docs/pt/unit_testing.md)
+* [Guia do Usuário](https://github.com/xzeu/tz/blob/main/docs/pt/guide.md)
+* [Arquitetura](https://github.com/xzeu/tz/blob/main/docs/pt/architecture.md)
+* [Tutorial de Início Rápido](https://github.com/xzeu/tz/blob/main/docs/pt/tutorial.md)
+* [Teste de Unidade](https://github.com/xzeu/tz/blob/main/docs/pt/unit_testing.md)
 
-- [Chinês](https://github.com/go-nunu/nunu/blob/main/docs/zh/unit_testing.md)
-- [Português](https://github.com/go-nunu/nunu/blob/main/docs/pt/unit_testing.md)
+- [Chinês](https://github.com/xzeu/tz/blob/main/docs/zh/unit_testing.md)
+- [Português](https://github.com/xzeu/tz/blob/main/docs/pt/unit_testing.md)
 
 
 # Testes Unitários
@@ -86,7 +86,7 @@ Objetos mock podem simular valores de retorno, exceções, timeouts, etc., de m�
 3. Melhoria da eficiência dos testes: Alguns módulos externos podem realizar operações demoradas, como solicitações de rede, operações de leitura/escrita de arquivos, etc. Ao usar objetos mock, podemos evitar executar essas operações na realidade, melhorando assim a velocidade e eficiência de execução dos testes.
 
 
-No projeto nunu, usamos as seguintes bibliotecas de mocking para nos ajudar a escrever testes unitários:
+No projeto tz, usamos as seguintes bibliotecas de mocking para nos ajudar a escrever testes unitários:
 
 * github.com/golang/mock            // Uma biblioteca de mocking open-source do Google
 * github.com/go-redis/redismock/v9  // Fornece testes de mock para consultas Redis, compatível com github.com/redis/go-redis/v9
@@ -103,7 +103,7 @@ Alguns podem não estar familiarizados com o que significa "programação orient
 package repository
 
 import (
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
 )
 
 
@@ -211,7 +211,7 @@ func TestUserHandler_GetProfile(t *testing.T) {
 
 ```
 
-O código fonte completo está localizado em: https://github.com/go-nunu/nunu-layout-advanced/blob/main/test/server/handler/user_test.go
+O código fonte completo está localizado em: https://github.com/xzeu/tz-layout-advanced/blob/main/test/server/handler/user_test.go
 
 ## sqlmock e redismock
 
@@ -227,8 +227,8 @@ import (
 	"time"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
-	"github.com/go-nunu/nunu-layout-advanced/internal/repository"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/repository"
 	"github.com/go-redis/redismock/v9"
 	"github.com/stretchr/testify/assert"
 	"gorm.io/driver/mysql"
@@ -279,7 +279,7 @@ func TestUserRepository_GetByUsername(t *testing.T) {
 
 ```
 
-O código completo está localizado em: https://github.com/go-nunu/nunu-layout-advanced/blob/main/test/server/repository/user_test.go
+O código completo está localizado em: https://github.com/xzeu/tz-layout-advanced/blob/main/test/server/repository/user_test.go
 
 
 ## Cobertura de Testes
@@ -295,7 +295,7 @@ Os dois comandos acima gerarão um arquivo de relatório de cobertura `coverage.
 
 O efeito é o seguinte:
 
-![coverage](https://github.com/go-nunu/nunu/blob/main/.github/assets/coverage.png)
+![coverage](https://github.com/xzeu/tz/blob/main/.github/assets/coverage.png)
 
 ## Conclusão
 

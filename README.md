@@ -1,24 +1,24 @@
-<a href="https://trendshift.io/repositories/9047" target="_blank"><img src="https://trendshift.io/api/badge/repositories/9047" alt="go-nunu%2Fnunu | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/9047" target="_blank"><img src="https://trendshift.io/api/badge/repositories/9047" alt="xzeu%2Ftz | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 
-# Nunu — A CLI tool for building Go applications.
+# Tz — A CLI tool for building Go applications.
 
-Nunu is a scaffolding tool for building Go applications. Its name comes from a game character in League of Legends, a little boy riding on the shoulders of a Yeti. Just like Nunu, this project stands on the shoulders of giants, as it is built upon a combination of popular libraries from the Go ecosystem. This combination allows you to quickly build efficient and reliable applications.
+Tz is a scaffolding tool for building Go applications. Its name comes from a game character in League of Legends, a little boy riding on the shoulders of a Yeti. Just like Tz, this project stands on the shoulders of giants, as it is built upon a combination of popular libraries from the Go ecosystem. This combination allows you to quickly build efficient and reliable applications.
 
 🚀Tips: This project is very complete, so updates will not be very frequent, welcome to use.
 
-- [简体中文介绍](https://github.com/go-nunu/nunu/blob/main/README_zh.md)
-- [Português](https://github.com/go-nunu/nunu/blob/main/README_pt.md)
-- [日本語](https://github.com/go-nunu/nunu/blob/main/README_jp.md)
+- [简体中文介绍](https://github.com/xzeu/tz/blob/main/README_zh.md)
+- [Português](https://github.com/xzeu/tz/blob/main/README_pt.md)
+- [日本語](https://github.com/xzeu/tz/blob/main/README_jp.md)
 
-![Nunu](https://github.com/go-nunu/nunu/blob/main/.github/assets/banner.png)
+![Tz](https://github.com/xzeu/tz/blob/main/.github/assets/banner.png)
 
 ## Documentation
-* [User Guide](https://github.com/go-nunu/nunu/blob/main/docs/en/guide.md)
-* [Architecture](https://github.com/go-nunu/nunu/blob/main/docs/en/architecture.md)
-* [Getting Started Tutorial](https://github.com/go-nunu/nunu/blob/main/docs/en/tutorial.md)
-* [Unit Testing](https://github.com/go-nunu/nunu/blob/main/docs/en/unit_testing.md)
-* [MCP Server](https://github.com/go-nunu/nunu-layout-mcp/blob/main/README.md)
+* [User Guide](https://github.com/xzeu/tz/blob/main/docs/en/guide.md)
+* [Architecture](https://github.com/xzeu/tz/blob/main/docs/en/architecture.md)
+* [Getting Started Tutorial](https://github.com/xzeu/tz/blob/main/docs/en/tutorial.md)
+* [Unit Testing](https://github.com/xzeu/tz/blob/main/docs/en/unit_testing.md)
+* [MCP Server](https://github.com/xzeu/tz-layout-mcp/blob/main/README.md)
 
 
 ## Features
@@ -42,20 +42,20 @@ Nunu is a scaffolding tool for building Go applications. Its name comes from a g
 - More...
 
 ## Key Features
-* **Low Learning Curve and Customization**: Nunu encapsulates popular libraries that Gophers are familiar with, allowing you to easily customize the application to meet specific requirements.
-* **High Performance and Scalability**: Nunu aims to be high-performance and scalable. It uses the latest technologies and best practices to ensure that your application can handle high traffic and large amounts of data.
-* **Security and Reliability**: Nunu uses stable and reliable third-party libraries to ensure the security and reliability of your application.
-* **Modular and Extensible**: Nunu is designed to be modular and extensible. You can easily add new features and functionality by using third-party libraries or writing your own modules.
-* **Complete Documentation and Testing**: Nunu has comprehensive documentation and testing. It provides extensive documentation and examples to help you get started quickly. It also includes a test suite to ensure that your application works as expected.
+* **Low Learning Curve and Customization**: Tz encapsulates popular libraries that Gophers are familiar with, allowing you to easily customize the application to meet specific requirements.
+* **High Performance and Scalability**: Tz aims to be high-performance and scalable. It uses the latest technologies and best practices to ensure that your application can handle high traffic and large amounts of data.
+* **Security and Reliability**: Tz uses stable and reliable third-party libraries to ensure the security and reliability of your application.
+* **Modular and Extensible**: Tz is designed to be modular and extensible. You can easily add new features and functionality by using third-party libraries or writing your own modules.
+* **Complete Documentation and Testing**: Tz has comprehensive documentation and testing. It provides extensive documentation and examples to help you get started quickly. It also includes a test suite to ensure that your application works as expected.
 
 ## Concise Layered Architecture
-Nunu adopts a classic layered architecture. In order to achieve modularity and decoupling, it uses the dependency injection framework `Wire`.
+Tz adopts a classic layered architecture. In order to achieve modularity and decoupling, it uses the dependency injection framework `Wire`.
 
-![Nunu Layout](https://github.com/go-nunu/nunu/blob/main/.github/assets/layout.png)
+![Tz Layout](https://github.com/xzeu/tz/blob/main/.github/assets/layout.png)
 
-## Nunu CLI
+## Tz CLI
 
-![Nunu](https://github.com/go-nunu/nunu/blob/main/.github/assets/screenshot.jpg)
+![Tz](https://github.com/xzeu/tz/blob/main/.github/assets/screenshot.jpg)
 
 
 ## Directory Structure
@@ -125,7 +125,7 @@ The project architecture follows a typical layered structure, consisting of the 
 In addition, there are some other files and directories, such as license files, build files, and README. Overall, the project architecture is clear, with clear responsibilities for each module, making it easy to understand and maintain.
 
 ## Requirements
-To use Nunu, you need to have the following software installed on your system:
+To use Tz, you need to have the following software installed on your system:
 
 * Go 1.19 or higher
 * Git
@@ -135,29 +135,29 @@ To use Nunu, you need to have the following software installed on your system:
 
 ### Installation
 
-You can install Nunu with the following command:
+You can install Tz with the following command:
 
 ```bash
-go install github.com/go-nunu/nunu@latest
+go install github.com/xzeu/tz@latest
 ```
 
-> Tips: If `go install` succeeds but the `nunu` command is not recognized, it is because the environment variable is not configured. You can add the GOBIN directory to the environment variable.
+> Tips: If `go install` succeeds but the `tz` command is not recognized, it is because the environment variable is not configured. You can add the GOBIN directory to the environment variable.
 
 ### Create a New Project
 
 You can create a new Go project with the following command:
 
 ```bash
-nunu new projectName
+tz new projectName
 ```
 
 By default, it pulls from the GitHub source, but you can also use an accelerated repository in China:
 
 ```
 // Use the basic template
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-basic.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-basic.git
 // Use the advanced template
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-advanced.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-advanced.git
 ```
 
 This command will create a directory named `projectName` and generate an elegant Go project structure within it.
@@ -167,14 +167,14 @@ This command will create a directory named `projectName` and generate an elegant
 You can create handlers, services, repositories, and models for your project using the following commands:
 
 ```bash
-nunu create handler user
-nunu create service user
-nunu create repository user
-nunu create model user
+tz create handler user
+tz create service user
+tz create repository user
+tz create model user
 ```
 or
 ```
-nunu create all user
+tz create all user
 ```
 
 These commands will create components named `UserHandler`, `UserService`, `UserRepository`, and `UserModel`, respectively, and place them in the correct directories.
@@ -184,7 +184,7 @@ These commands will create components named `UserHandler`, `UserService`, `UserR
 You can quickly run the project with the following command:
 
 ```bash
-nunu run
+tz run
 ```
 
 This command will start your Go project and support hot-reloading when files are updated.
@@ -194,7 +194,7 @@ This command will start your Go project and support hot-reloading when files are
 You can quickly compile `wire.go` with the following command:
 
 ```bash
-nunu wire
+tz wire
 ```
 
 This command will compile your `wire.go` file and generate the required dependencies.
@@ -205,8 +205,8 @@ If you find any issues or have any improvement suggestions, please feel free to 
 
 ## License
 
-Nunu is released under the MIT License. For more information, see the [LICENSE](LICENSE) file.
+Tz is released under the MIT License. For more information, see the [LICENSE](LICENSE) file.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=go-nunu/nunu&type=Date)](https://star-history.com/#go-nunu/nunu&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=xzeu/tz&type=Date)](https://star-history.com/#xzeu/tz&Date)

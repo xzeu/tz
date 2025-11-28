@@ -1,69 +1,69 @@
 ## Documentação
-* [Guia do Usuário](https://github.com/go-nunu/nunu/blob/main/docs/pt/guide.md)
-* [Arquitetura](https://github.com/go-nunu/nunu/blob/main/docs/pt/architecture.md)
-* [Tutorial de Início Rápido](https://github.com/go-nunu/nunu/blob/main/docs/pt/tutorial.md)
-* [Teste de Unidade](https://github.com/go-nunu/nunu/blob/main/docs/pt/unit_testing.md)
+* [Guia do Usuário](https://github.com/xzeu/tz/blob/main/docs/pt/guide.md)
+* [Arquitetura](https://github.com/xzeu/tz/blob/main/docs/pt/architecture.md)
+* [Tutorial de Início Rápido](https://github.com/xzeu/tz/blob/main/docs/pt/tutorial.md)
+* [Teste de Unidade](https://github.com/xzeu/tz/blob/main/docs/pt/unit_testing.md)
 
-- [Chinês](https://github.com/go-nunu/nunu/blob/main/docs/zh/guide.md)
-- [Português](https://github.com/go-nunu/nunu/blob/main/docs/pt/guide.md)
+- [Chinês](https://github.com/xzeu/tz/blob/main/docs/zh/guide.md)
+- [Português](https://github.com/xzeu/tz/blob/main/docs/pt/guide.md)
 
-# Guia do Usuário Nunu
+# Guia do Usuário Tz
 
-Nunu é uma estrutura de aplicação baseada em Golang que ajuda você a construir aplicações eficientes e confiáveis rapidamente. Este guia mostrará como usar o Nunu para criar e desenvolver suas aplicações.
+Tz é uma estrutura de aplicação baseada em Golang que ajuda você a construir aplicações eficientes e confiáveis rapidamente. Este guia mostrará como usar o tz para criar e desenvolver suas aplicações.
 
 ## Instalação
 
-Você pode instalar o Nunu usando o seguinte comando:
+Você pode instalar o Tz usando o seguinte comando:
 
 ```bash
-go install github.com/go-nunu/nunu@latest
+go install github.com/xzeu/tz@latest
 ```
 
-> Dica: Se `go install` for bem-sucedido, mas o comando nunu não for encontrado, é porque a variável de ambiente não está configurada. Você pode configurar o diretório GOBIN na variável de ambiente.
+> Dica: Se `go install` for bem-sucedido, mas o comando tz não for encontrado, é porque a variável de ambiente não está configurada. Você pode configurar o diretório GOBIN na variável de ambiente.
 
 ## Criando um Novo Projeto
 
 Você pode usar o seguinte comando para criar um novo projeto em Golang:
 
 ```bash
-nunu new nomeDoProjeto
+tz new nomeDoProjeto
 ```
 
 Este comando criará um diretório chamado `nomeDoProjeto` e gerará uma estrutura elegante de projeto em Golang dentro dele.
 
 **Fonte Acelerada na China:**
 
-Por padrão, `nunu new` busca a partir da fonte do GitHub. No entanto, você também pode usar um repositório acelerado na China:
+Por padrão, `tz new` busca a partir da fonte do GitHub. No entanto, você também pode usar um repositório acelerado na China:
 ```bash
 # Usando o template básico
-nunu new nomeDoProjeto  -r https://gitee.com/go-nunu/nunu-layout-basic.git
+tz new nomeDoProjeto  -r https://gitee.com/xzeu/tz-layout-basic.git
 # Usando o template avançado (recomendado)
-nunu new nomeDoProjeto  -r https://gitee.com/go-nunu/nunu-layout-advanced.git
+tz new nomeDoProjeto  -r https://gitee.com/xzeu/tz-layout-advanced.git
 ```
 
-> O Nunu oferece dois tipos de layouts:
+> O tz oferece dois tipos de layouts:
 
 * **Layout Básico**
 
-O Layout Básico contém uma estrutura de diretórios minimalista e é adequado para desenvolvedores que já estão familiarizados com projetos Nunu.
+O Layout Básico contém uma estrutura de diretórios minimalista e é adequado para desenvolvedores que já estão familiarizados com projetos tz.
 
 * **Layout Avançado**
 
 **Recomendação: Recomendamos que iniciantes escolham o Layout Avançado primeiro.**
 
-O Layout Avançado inclui muitos exemplos de uso do Nunu (por exemplo, db, redis, jwt, cron, migração, etc.), o que é adequado para desenvolvedores aprenderem rapidamente e entenderem as ideias arquitetônicas do Nunu.
+O Layout Avançado inclui muitos exemplos de uso do Tz (por exemplo, db, redis, jwt, cron, migração, etc.), o que é adequado para desenvolvedores aprenderem rapidamente e entenderem as ideias arquitetônicas do tz.
 
 
 ## Início Rápido com Docker
 
-Se você quiser experimentar rapidamente o layout avançado do Nunu, recomendamos usar os seguintes comandos para iniciar o projeto rapidamente:
+Se você quiser experimentar rapidamente o layout avançado do Tz, recomendamos usar os seguintes comandos para iniciar o projeto rapidamente:
 
 ```bash
 cd ./deploy/docker-compose && docker compose up -d && cd ../../
 
 go run ./cmd/migration
 
-nunu run ./cmd/server
+tz run ./cmd/server
 ```
 
 Alternativamente, você pode usar diretamente o comando `make`:
@@ -77,26 +77,26 @@ make bootstrap
 Você pode usar os seguintes comandos para criar componentes como handler, service, repository e model para o seu projeto:
 
 ```bash
-nunu create handler user
-nunu create service user
-nunu create repository user
-nunu create model user
+tz create handler user
+tz create service user
+tz create repository user
+tz create model user
 ```
 
 Esses comandos criarão componentes chamados `UserHandler`, `UserService`, `UserRepository` e `UserModel`, e os colocarão nos diretórios corretos.
 
 Se você quiser criar os componentes correspondentes em um diretório personalizado, você pode fazer isso da seguinte forma:
 ```bash
-nunu create handler internal/handler/user/center
-nunu create service internal/service/user/center
-nunu create repository internal/repository/user/center
-nunu create model internal/model/user/center
+tz create handler internal/handler/user/center
+tz create service internal/service/user/center
+tz create repository internal/repository/user/center
+tz create model internal/model/user/center
 ```
 
 Você também pode usar o seguinte comando para criar todos os componentes (`handler`, `service`, `repository` e `model`) de uma vez:
 
 ```bash
-nunu create all user
+tz create all user
 ```
 
 ## Iniciando o Projeto
@@ -106,7 +106,7 @@ Você pode iniciar rapidamente o projeto usando o seguinte comando:
 ```bash
 # Equivalente a go run ./cmd/server
 
-nunu run
+tz run
 ```
 
 Este comando iniciará seu projeto Golang e suportará recarga automática quando os arquivos forem atualizados.
@@ -117,7 +117,7 @@ Você pode compilar rapidamente `wire.go` usando o seguinte comando:
 
 ```bash
 # Equivalente a cd cmd/server && wire
-nunu wire
+tz wire
 ```
 
 Este comando procurará automaticamente pelo arquivo `wire.go` em seu projeto e compilará as dependências necessárias.
@@ -125,16 +125,16 @@ Este comando procurará automaticamente pelo arquivo `wire.go` em seu projeto e 
 ## Arquivo de Configuração
 
 ### Iniciando com um Arquivo de Configuração Específico
-O Nunu usa a biblioteca Viper para gerenciar arquivos de configuração.
+O Tz usa a biblioteca Viper para gerenciar arquivos de configuração.
 
 Por padrão, ele carrega `config/local.yml`, mas você pode especificar o caminho do arquivo de configuração usando variáveis de ambiente ou parâmetros.
 
 ```bash
 # Linux ou MacOS
-APP_CONF=config/prod.yml nunu run
+APP_CONF=config/prod.yml tz run
 
 # Windows
-set APP_CONF=config\prod.yml && nunu run
+set APP_CONF=config\prod.yml && tz run
 ```
 Alternativamente, você pode usar a abordagem de parâmetro: `go run ./cmd/server -conf=config/prod.yml`
 
@@ -162,7 +162,7 @@ package repository
 import (
 	"context"
 	"fmt"
-	"github.com/go-nunu/nunu-layout-advanced/pkg/log"
+	"github.com/xzeu/tz-layout-advanced/pkg/log"
 	"github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
@@ -211,11 +211,11 @@ func NewRedis(conf *viper.Viper) *redis.Client {
 
 
 ```
-Dica: Após realizar a injeção de dependência através de parâmetros, não se esqueça de executar o comando nunu wire para gerar o arquivo de dependência.
+Dica: Após realizar a injeção de dependência através de parâmetros, não se esqueça de executar o comando tz wire para gerar o arquivo de dependência.
 
 ## Registro de Logs
 
-O Nunu utiliza a biblioteca Zap para gerenciar logs. Você pode configurar o log no diretório `config`. Por exemplo:
+O tz utiliza a biblioteca Zap para gerenciar logs. Você pode configurar o log no diretório `config`. Por exemplo:
 
 ```yaml
 log:
@@ -235,8 +235,8 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/go-nunu/nunu-layout-basic/internal/service"
-	"github.com/go-nunu/nunu-layout-basic/pkg/helper/resp"
+	"github.com/xzeu/tz-layout-basic/internal/service"
+	"github.com/xzeu/tz-layout-basic/pkg/helper/resp"
 	"go.uber.org/zap"
 	"net/http"
 )
@@ -254,7 +254,7 @@ func (h *userHandler) GetUserById(ctx *gin.Context) {
 
 ## Banco de Dados
 
-O Nunu utiliza a biblioteca GORM para gerenciar bancos de dados. Você pode configurar o banco de dados no diretório `config`. Por exemplo:
+O tz utiliza a biblioteca GORM para gerenciar bancos de dados. Você pode configurar o banco de dados no diretório `config`. Por exemplo:
 
 ```yaml
 data:
@@ -274,7 +274,7 @@ Você pode se conectar ao banco de dados usando o seguinte código:
 package repository
 
 import (
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
 )
 
 
@@ -302,7 +302,7 @@ func (r *userRepository) FirstById(id int64) (*model.User, error) {
 ```
 
 
-É importante notar que `xxxRepository`, `xxxService`, `xxxHandler`, etc., no Nunu são implementados com base em interfaces. Isso é conhecido como **programação orientada a interfaces**, que pode melhorar a flexibilidade, escalabilidade, testabilidade e manutenibilidade do código. É um estilo de programação altamente recomendado na linguagem Go.
+É importante notar que `xxxRepository`, `xxxService`, `xxxHandler`, etc., no tz são implementados com base em interfaces. Isso é conhecido como **programação orientada a interfaces**, que pode melhorar a flexibilidade, escalabilidade, testabilidade e manutenibilidade do código. É um estilo de programação altamente recomendado na linguagem Go.
 
 No código acima, escrevemos:
 
@@ -320,17 +320,17 @@ type UserRepository struct {
 	*Repository
 }
 ```
-> Dica: Os testes unitários no layout avançado do Nunu são baseados nas características de `interface` para operações de mock.
+> Dica: Os testes unitários no layout avançado do tz são baseados nas características de `interface` para operações de mock.
 
 ## Testes
 
-O Nunu utiliza bibliotecas como testify, redismock, gomock e go-sqlmock para escrever testes.
+O tz utiliza bibliotecas como testify, redismock, gomock e go-sqlmock para escrever testes.
 
 Você pode executar o teste usando o seguinte comando:
 
 ```bash
-go test -coverpkg=./internal/handler,./internal/service,./internal/repository -coverprofile=./.nunu/coverage.out ./test/server/...
-go tool cover -html=./.nunu/coverage.out -o coverage.html
+go test -coverpkg=./internal/handler,./internal/service,./internal/repository -coverprofile=./.tz/coverage.out ./test/server/...
+go tool cover -html=./.tz/coverage.out -o coverage.html
 
 ```
 
@@ -338,4 +338,4 @@ O comando acima irá gerar um arquivo HTML chamado `coverage.html`. Você pode a
 
 ## Conclusão
 
-O Nunu é um esqueleto de aplicação prático em Golang que ajuda você a construir rapidamente aplicações eficientes e confiáveis. Esperamos que este guia possa ajudá-lo a fazer um melhor uso do Nunu.
+O tz é um esqueleto de aplicação prático em Golang que ajuda você a construir rapidamente aplicações eficientes e confiáveis. Esperamos que este guia possa ajudá-lo a fazer um melhor uso do tztz.

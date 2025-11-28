@@ -1,18 +1,18 @@
 ## Documentação
-* [Guia do Usuário](https://github.com/go-nunu/nunu/blob/main/docs/pt/guide.md)
-* [Arquitetura](https://github.com/go-nunu/nunu/blob/main/docs/pt/architecture.md)
-* [Tutorial de Início Rápido](https://github.com/go-nunu/nunu/blob/main/docs/pt/tutorial.md)
-* [Teste de Unidade](https://github.com/go-nunu/nunu/blob/main/docs/pt/unit_testing.md)
+* [Guia do Usuário](https://github.com/xzeu/tz/blob/main/docs/pt/guide.md)
+* [Arquitetura](https://github.com/xzeu/tz/blob/main/docs/pt/architecture.md)
+* [Tutorial de Início Rápido](https://github.com/xzeu/tz/blob/main/docs/pt/tutorial.md)
+* [Teste de Unidade](https://github.com/xzeu/tz/blob/main/docs/pt/unit_testing.md)
 
-- [Chinês](https://github.com/go-nunu/nunu/blob/main/docs/zh/architecture.md)
-- [Português](https://github.com/go-nunu/nunu/blob/main/docs/pt/architecture.md)
+- [Chinês](https://github.com/xzeu/tz/blob/main/docs/zh/architecture.md)
+- [Português](https://github.com/xzeu/tz/blob/main/docs/pt/architecture.md)
 
-# Explorando a Arquitetura do Nunu
+# Explorando a Arquitetura do Tz
 
-O Nunu adota uma arquitetura em camadas clássica. Além disso, para alcançar uma melhor modularidade e desacoplamento, ele utiliza o framework de injeção de dependência `Wire`.
+O Tz adota uma arquitetura em camadas clássica. Além disso, para alcançar uma melhor modularidade e desacoplamento, ele utiliza o framework de injeção de dependência `Wire`.
 
 
-![Nunu Layout](https://github.com/go-nunu/nunu/blob/main/.github/assets/layout.png)
+![Tz Layout](https://github.com/xzeu/tz/blob/main/.github/assets/layout.png)
 
 ## Estrutura de Diretórios
 ```

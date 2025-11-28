@@ -1,22 +1,22 @@
 ## 文档
-* [使用指南](https://github.com/go-nunu/nunu/blob/main/docs/zh/guide.md)
-* [分层架构](https://github.com/go-nunu/nunu/blob/main/docs/zh/architecture.md)
-* [详细教程](https://github.com/go-nunu/nunu/blob/main/docs/zh/tutorial.md)
-* [高效编写单元测试](https://github.com/go-nunu/nunu/blob/main/docs/zh/unit_testing.md)
+* [使用指南](https://github.com/xzeu/tz/blob/main/docs/zh/guide.md)
+* [分层架构](https://github.com/xzeu/tz/blob/main/docs/zh/architecture.md)
+* [详细教程](https://github.com/xzeu/tz/blob/main/docs/zh/tutorial.md)
+* [高效编写单元测试](https://github.com/xzeu/tz/blob/main/docs/zh/unit_testing.md)
 
 
-[进入英文版](https://github.com/go-nunu/nunu/blob/main/docs/en/guide.md)
+[进入英文版](https://github.com/xzeu/tz/blob/main/docs/en/guide.md)
 
-# Nunu 使用指南
+# Tz 使用指南
 
-Nunu 是一个基于 Golang 的应用脚手架，它可以帮助您快速构建高效、可靠的应用程序。本指南将介绍如何使用 Nunu 创建、开发您的应用程序。
+Tz 是一个基于 Golang 的应用脚手架，它可以帮助您快速构建高效、可靠的应用程序。本指南将介绍如何使用 Tz 创建、开发您的应用程序。
 
 ## 安装
 
-您可以通过以下命令安装 Nunu：
+您可以通过以下命令安装 Tz：
 
 ```bash
-go install github.com/go-nunu/nunu@latest
+go install github.com/xzeu/tz@latest
 ```
 
 国内用户可以使用`GOPROXY`加速`go install`
@@ -26,14 +26,14 @@ $ go env -w GO111MODULE=on
 $ go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
-> tips: 如果`go install`成功，却提示找不到nunu命令，这是因为环境变量没有配置，可以把 GOBIN 目录配置到环境变量中即可
+> tips: 如果`go install`成功，却提示找不到tz命令，这是因为环境变量没有配置，可以把 GOBIN 目录配置到环境变量中即可
 
 ## 创建新项目
 
 您可以使用以下命令创建一个新的 Golang 项目：
 
 ```bash
-nunu new projectName
+tz new projectName
 
 // 推荐新用户选择Advanced Layout
 ```
@@ -42,48 +42,48 @@ nunu new projectName
 
 **国内加速源：**
 
-`nunu new`默认拉取github源，你也可以使用国内加速仓库
+`tz new`默认拉取github源，你也可以使用国内加速仓库
 ```
 // 使用高级模板(推荐)
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-advanced.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-advanced.git
 
 // 使用基础模板
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-basic.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-basic.git
 
 // 使用ws/tcp模板(适合即时通信、游戏开发等场景)
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-chat.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-chat.git
 
 ```
 
 
 
-> Nunu内置了三种类型的Layout：
+> Tz内置了三种类型的Layout：
 
 * **基础模板(Basic Layout)**
 
-Basic Layout 包含一个非常精简的架构目录结构，适合非常熟悉Nunu项目的开发者使用。
+Basic Layout 包含一个非常精简的架构目录结构，适合非常熟悉Tz项目的开发者使用。
 
 * **高级模板(Advanced Layout)**
 
 **建议：我们推荐新手优先选择使用Advanced Layout。**
 
 
-Advanced Layout 包含了很多Nunu的用法示例（ db、redis、 jwt、 cron、 migration等），适合开发者快速学习了解Nunu的架构思想。
+Advanced Layout 包含了很多Tz的用法示例（ db、redis、 jwt、 cron、 migration等），适合开发者快速学习了解Tz的架构思想。
 
 * **即时通信模板(Chat Layout)**
 
-Chat Layout 是一个基于Nunu的长链接项目模板，适合适合即时通信、游戏开发等场景。
+Chat Layout 是一个基于Tz的长链接项目模板，适合适合即时通信、游戏开发等场景。
 
 
 ## 使用docker快速启动项目
 
-如果你想快速尝试nunu高级layout，推荐使用如下命令快速启动
+如果你想快速尝试tz高级layout，推荐使用如下命令快速启动
 ```
 cd ./deploy/docker-compose && docker compose up -d && cd ../../
 
 go run ./cmd/migration
 
-nunu run ./cmd/server
+tz run ./cmd/server
 ```
 或者直接使用make命令
 ```
@@ -95,27 +95,27 @@ make bootstrap
 您可以使用以下命令为项目创建 handler、service 、 repository和model 等组件：
 
 ```bash
-nunu create handler user
-nunu create service user
-nunu create repository user
-nunu create model user
+tz create handler user
+tz create service user
+tz create repository user
+tz create model user
 ```
 
 这些命令将分别创建一个名为 `UserHandler`、`UserService` 、 `UserRepository` 和 `UserModel` 的组件，并将它们放置在正确的目录中。
 
 如果你想在自定义的目录创建相应组件则可以这么做：
 ```bash
-nunu create handler internal/handler/user/center
-nunu create service internal/service/user/center
-nunu create repository internal/repository/user/center
-nunu create model internal/model/user/center
+tz create handler internal/handler/user/center
+tz create service internal/service/user/center
+tz create repository internal/repository/user/center
+tz create model internal/model/user/center
 ```
 
 
 你还可以使用以下命令一次性创建 handler、service、repository 和 model 等组件：
 
 ```bash
-nunu create all user
+tz create all user
 ```
 
 ## 启动项目
@@ -125,7 +125,7 @@ nunu create all user
 ```bash
 // 等价于  go run ./cmd/server
 
-nunu run
+tz run
 ```
 
 此命令将启动您的 Golang 项目，并支持文件更新热重启。
@@ -136,7 +136,7 @@ nunu run
 
 ```bash
 // 等价于 cd cmd/server  && wire
-nunu wire
+tz wire
 ```
 
 此命令会自动寻找项目中的`wire.go`文件，并快速编译生成所需的依赖项。
@@ -144,17 +144,17 @@ nunu wire
 ## 配置文件
 
 ### 指定配置文件启动
-Nunu 使用 Viper 库来管理配置文件。
+Tz 使用 Viper 库来管理配置文件。
 
 默认会加载`config/local.yml`，你可以使用环境变量或参数来指定配置文件路径
 
 ```
 // Linux or MacOS
-APP_CONF=config/prod.yml nunu run
+APP_CONF=config/prod.yml tz run
 
 // Windows
 
-set APP_CONF=config\prod.yml && nunu run
+set APP_CONF=config\prod.yml && tz run
 
 ```
 或者使用传参的方式:`go run ./cmd/server -conf=config/prod.yml`
@@ -184,7 +184,7 @@ package repository
 import (
 	"context"
 	"fmt"
-	"github.com/go-nunu/nunu-layout-advanced/pkg/log"
+	"github.com/xzeu/tz-layout-advanced/pkg/log"
 	"github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
@@ -233,11 +233,11 @@ func NewRedis(conf *viper.Viper) *redis.Client {
 
 
 ```
-tips：通过参数进行依赖注入之后，别忘记执行`nunu wire`命令生成依赖文件。
+tips：通过参数进行依赖注入之后，别忘记执行`tz wire`命令生成依赖文件。
 
 ## 日志
 
-Nunu 使用 Zap 库来管理日志。您可以在 `config` 中配置日志。例如：
+Tz 使用 Zap 库来管理日志。您可以在 `config` 中配置日志。例如：
 
 ```yaml
 log:
@@ -257,8 +257,8 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/go-nunu/nunu-layout-basic/internal/service"
-	"github.com/go-nunu/nunu-layout-basic/pkg/helper/resp"
+	"github.com/xzeu/tz-layout-basic/internal/service"
+	"github.com/xzeu/tz-layout-basic/pkg/helper/resp"
 	"go.uber.org/zap"
 	"net/http"
 )
@@ -276,7 +276,7 @@ func (h *userHandler) GetUserById(ctx *gin.Context) {
 
 ## 数据库
 
-Nunu 使用 GORM 库来管理数据库。您可以在 `config` 目录下配置数据库。例如：
+Tz 使用 GORM 库来管理数据库。您可以在 `config` 目录下配置数据库。例如：
 
 ```yaml
 data:
@@ -296,7 +296,7 @@ data:
 package repository
 
 import (
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
 )
 
 
@@ -323,7 +323,7 @@ func (r *userRepository) FirstById(id int64) (*model.User, error) {
 
 ```
 
-需要注意的是Nunu中的`xxxRepository`、`xxxService`、`xxxHandler`都是基于`interface`实现，
+需要注意的是Tz中的`xxxRepository`、`xxxService`、`xxxHandler`都是基于`interface`实现，
 
 这就是所谓的**面向接口编程**，它可以提高代码的灵活性、可扩展性、可测试性和可维护性，是Go语言非常推崇的一种编程风格。
 
@@ -345,20 +345,20 @@ type UserRepository struct {
 	*Repository
 }
 ```
-> tips: Nunu高级Layout中的单元测试就是基于`interface`特性进行mock操作的。
+> tips: Tz高级Layout中的单元测试就是基于`interface`特性进行mock操作的。
 
 
 ## 测试
 
-Nunu 使用 testify、redismock、gomock、go-sqlmock等 库来编写测试。
+Tz 使用 testify、redismock、gomock、go-sqlmock等 库来编写测试。
 
-具体的测试用例可以查看[Nunu advanced layout](https://github.com/go-nunu/nunu-layout-advanced/tree/main/test/server)
+具体的测试用例可以查看[Tz advanced layout](https://github.com/xzeu/tz-layout-advanced/tree/main/test/server)
 
 您可以使用以下命令运行测试：
 
 ```bash
-go test -coverpkg=./internal/handler,./internal/service,./internal/repository -coverprofile=./.nunu/coverage.out ./test/server/...
-go tool cover -html=./.nunu/coverage.out -o coverage.html
+go test -coverpkg=./internal/handler,./internal/service,./internal/repository -coverprofile=./.tz/coverage.out ./test/server/...
+go tool cover -html=./.tz/coverage.out -o coverage.html
 
 ```
 
@@ -366,4 +366,4 @@ go tool cover -html=./.nunu/coverage.out -o coverage.html
 
 ## 结论
 
-Nunu 是一个非常实用的 Golang 应用脚手架，它可以帮助您快速构建高效、可靠的应用程序。希望本指南能够帮助您更好地使用 Nunu。
+Tz 是一个非常实用的 Golang 应用脚手架，它可以帮助您快速构建高效、可靠的应用程序。希望本指南能够帮助您更好地使用 Tz。

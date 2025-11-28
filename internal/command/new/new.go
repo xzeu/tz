@@ -9,9 +9,9 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/go-nunu/nunu/config"
-	"github.com/go-nunu/nunu/internal/pkg/helper"
 	"github.com/spf13/cobra"
+	"github.com/xzeu/tz/config"
+	"github.com/xzeu/tz/internal/pkg/helper"
 )
 
 type Project struct {
@@ -20,9 +20,9 @@ type Project struct {
 
 var CmdNew = &cobra.Command{
 	Use:     "new",
-	Example: "nunu new demo-api",
+	Example: "tz new demo-api",
 	Short:   "create a new project.",
-	Long:    `create a new project with nunu layout.`,
+	Long:    `create a new project with tz layout.`,
 	Run:     run,
 }
 var (
@@ -77,7 +77,7 @@ func run(cmd *cobra.Command, args []string) {
 	fmt.Printf("🎉 Project \u001B[36m%s\u001B[0m created successfully!\n\n", p.ProjectName)
 	fmt.Printf("Done. Now run:\n\n")
 	fmt.Printf("› \033[36mcd %s \033[0m\n", p.ProjectName)
-	fmt.Printf("› \033[36mnunu run \033[0m\n\n")
+	fmt.Printf("› \033[36mtz run \033[0m\n\n")
 }
 
 func (p *Project) cloneTemplate() (bool, error) {

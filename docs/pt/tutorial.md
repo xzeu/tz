@@ -1,18 +1,18 @@
 ## Documentação
-* [Guia do Usuário](https://github.com/go-nunu/nunu/blob/main/docs/pt/guide.md)
-* [Arquitetura](https://github.com/go-nunu/nunu/blob/main/docs/pt/architecture.md)
-* [Tutorial de Início Rápido](https://github.com/go-nunu/nunu/blob/main/docs/pt/tutorial.md)
-* [Teste de Unidade](https://github.com/go-nunu/nunu/blob/main/docs/pt/unit_testing.md)
+* [Guia do Usuário](https://github.com/xzeu/tz/blob/main/docs/pt/guide.md)
+* [Arquitetura](https://github.com/xzeu/tz/blob/main/docs/pt/architecture.md)
+* [Tutorial de Início Rápido](https://github.com/xzeu/tz/blob/main/docs/pt/tutorial.md)
+* [Teste de Unidade](https://github.com/xzeu/tz/blob/main/docs/pt/unit_testing.md)
 
-- [Chinês](https://github.com/go-nunu/nunu/blob/main/docs/zh/tutorial.md)
-- [Português](https://github.com/go-nunu/nunu/blob/main/docs/pt/tutorial.md)
+- [Chinês](https://github.com/xzeu/tz/blob/main/docs/zh/tutorial.md)
+- [Português](https://github.com/xzeu/tz/blob/main/docs/pt/tutorial.md)
 
-# Guia do Usuário do Framework Nunu
+# Guia do Usuário do Framework Tz
 
-Nunu é um framework web baseado na linguagem de programação Go. Ele oferece uma estrutura de projeto elegante e operações de comando que permitem aos desenvolvedores desenvolver aplicações web de forma eficiente.
+Tz é um framework web baseado na linguagem de programação Go. Ele oferece uma estrutura de projeto elegante e operações de comando que permitem aos desenvolvedores desenvolver aplicações web de forma eficiente.
 
 ## Requisitos
-Para usar o Nunu com o Layout Avançado, você precisa ter o seguinte software instalado no seu sistema:
+Para usar o Tz com o Layout Avançado, você precisa ter o seguinte software instalado no seu sistema:
 
 * Golang 1.19 ou superior
 * Git
@@ -21,10 +21,10 @@ Para usar o Nunu com o Layout Avançado, você precisa ter o seguinte software i
 
 ## Instalação
 
-Antes de começar a usar o Nunu, você precisa instalá-lo. Você pode fazer isso executando o seguinte comando:
+Antes de começar a usar o Tz, você precisa instalá-lo. Você pode fazer isso executando o seguinte comando:
 
 ```bash
-go install github.com/go-nunu/nunu@latest
+go install github.com/xzeu/tz@latest
 ```
 
 Para usuários na China, você pode usar `GOPROXY` para acelerar o `go install`.
@@ -33,44 +33,44 @@ $ go env -w GO111MODULE=on
 $ go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
-> Dicas: Se `go install` for bem-sucedido, mas você receber um erro dizendo "comando nunu não encontrado", significa que a variável de ambiente não está configurada. Você pode adicionar o diretório GOBIN à variável de ambiente.
+> Dicas: Se `go install` for bem-sucedido, mas você receber um erro dizendo "comando tz não encontrado", significa que a variável de ambiente não está configurada. Você pode adicionar o diretório GOBIN à variável de ambiente.
 
 ## Criando um Projeto
 
-Criar um novo projeto com o Nunu é muito simples. Basta executar o seguinte comando na linha de comando:
+Criar um novo projeto com o Tz é muito simples. Basta executar o seguinte comando na linha de comando:
 
 ```bash
-nunu new nomeDoProjeto
+tz new nomeDoProjeto
 ```
 
 Substitua `nomeDoProjeto` pelo nome do seu projeto. Aqui, escolheremos o Layout Avançado.
 
 **Usando um Repositório Acelerado na China:**
 
-Por padrão, `nunu new` puxa do repositório do GitHub, mas você também pode usar um repositório acelerado na China.
+Por padrão, `tz new` puxa do repositório do GitHub, mas você também pode usar um repositório acelerado na China.
 
 ```bash
 # Usando o template avançado (recomendado)
-nunu new nomeDoProjeto -r https://gitee.com/go-nunu/nunu-layout-advanced.git
+tz new nomeDoProjeto -r https://gitee.com/xzeu/tz-layout-advanced.git
 
 # Usando o template básico
-nunu new nomeDoProjeto -r https://gitee.com/go-nunu/nunu-layout-basic.git
+tz new nomeDoProjeto -r https://gitee.com/xzeu/tz-layout-basic.git
 ```
 
-Após executar o comando acima, o Nunu criará automaticamente um projeto Go bem estruturado com alguns arquivos e diretórios comumente usados.
+Após executar o comando acima, o Tz criará automaticamente um projeto Go bem estruturado com alguns arquivos e diretórios comumente usados.
 
 
 ## Criando Componentes
 
-No Nunu, você pode usar o seguinte comando para criar componentes Handler, Service, Repository e Model em lotes:
+No Tz, você pode usar o seguinte comando para criar componentes Handler, Service, Repository e Model em lotes:
 
 ```bash
-nunu create all order
+tz create all order
 ```
 
 Aqui, `order` é o nome do componente que você deseja criar.
 
-Após executar o comando acima, o Nunu criará automaticamente os componentes nos diretórios correspondentes e escreverá as estruturas correspondentes e alguns métodos comumente usados.
+Após executar o comando acima, o Tz criará automaticamente os componentes nos diretórios correspondentes e escreverá as estruturas correspondentes e alguns métodos comumente usados.
 ```bash
 # Informação de log
 Created new handler: internal/handler/order.go
@@ -145,10 +145,10 @@ func newApp(*viper.Viper, *log.Logger) (*gin.Engine, func(), error) {
 ```
 ## Compilando o Wire
 
-No Nunu, você pode usar o seguinte comando para compilar o Wire:
+No Tz, você pode usar o seguinte comando para compilar o Wire:
 
 ```bash
-nunu wire all
+tz wire all
 ```
 
 Após executar o comando acima, você verá que o arquivo `wire_gen.go` é gerado a partir do arquivo `cmd/server/wire.go`.
@@ -181,7 +181,7 @@ func NewApp(viperViper *viper.Viper, logger *log.Logger) (*gin.Engine, func(), e
 
 ```
 
-Neste ponto, completamos o processo central do projeto Nunu.
+Neste ponto, completamos o processo central do projeto Tz.
 
 Em seguida, você precisa modificar as informações de configuração do MySQL e Redis em `config/local.yml` e escrever seu código lógico nos arquivos relevantes.
 ```bash
@@ -192,24 +192,24 @@ internal/model/order.go              // Entidade da tabela do banco de dados, mo
 ```
 
 ## Iniciando o Projeto
-Finalmente, no Nunu, você pode usar o seguinte comando para iniciar o projeto:
+Finalmente, no Tz, você pode usar o seguinte comando para iniciar o projeto:
 
 ```bash
 # Por favor, modifique as informações de configuração do MySQL e Redis em config/local.yml antes de iniciar o servidor
 # Antes de iniciar o servidor pela primeira vez, execute a seguinte migração de banco de dados
-nunu run ./cmd/migration  
+tz run ./cmd/migration  
 
 # Iniciar o servidor
-nunu run ./cmd/server    
+tz run ./cmd/server    
 
 # Ou
-nunu run
+tz run
 
 # Ou
-nunu run ./cmd/server  --excludeDir=".git,.idea,tmp,vendor" --includeExt="go,yml,vue"  -- --conf=./config/local.yml
+tz run ./cmd/server  --excludeDir=".git,.idea,tmp,vendor" --includeExt="go,yml,vue"  -- --conf=./config/local.yml
 ```
 
-Após executar o comando acima, o Nunu iniciará automaticamente o projeto e monitorará atualizações de arquivos, suportando recarregamento em tempo real.
+Após executar o comando acima, o Tz iniciará automaticamente o projeto e monitorará atualizações de arquivos, suportando recarregamento em tempo real.
 
 
 
@@ -253,4 +253,4 @@ http://127.0.0.1:8000/swagger/index.html
 
 ## Conclusão
 
-O framework Nunu oferece uma estrutura de projeto elegante e operações de comando que permitem aos desenvolvedores desenvolver aplicações web de forma eficiente. Neste tutorial, você aprendeu como criar um projeto, criar Handlers, criar Services, criar Repositories, compilar o Wire e iniciar o projeto usando o Nunu. Esperamos que este conteúdo ajude você a fazer melhor uso do framework Nunu.
+O framework Tz oferece uma estrutura de projeto elegante e operações de comando que permitem aos desenvolvedores desenvolver aplicações web de forma eficiente. Neste tutorial, você aprendeu como criar um projeto, criar Handlers, criar Services, criar Repositories, compilar o Wire e iniciar o projeto usando o Tz. Esperamos que este conteúdo ajude você a fazer melhor uso do framework Tz.

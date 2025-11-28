@@ -1,19 +1,19 @@
 ## 文档
-* [使用指南](https://github.com/go-nunu/nunu/blob/main/docs/zh/guide.md)
-* [分层架构](https://github.com/go-nunu/nunu/blob/main/docs/zh/architecture.md)
-* [详细教程](https://github.com/go-nunu/nunu/blob/main/docs/zh/tutorial.md)
-* [高效编写单元测试](https://github.com/go-nunu/nunu/blob/main/docs/zh/unit_testing.md)
+* [使用指南](https://github.com/xzeu/tz/blob/main/docs/zh/guide.md)
+* [分层架构](https://github.com/xzeu/tz/blob/main/docs/zh/architecture.md)
+* [详细教程](https://github.com/xzeu/tz/blob/main/docs/zh/tutorial.md)
+* [高效编写单元测试](https://github.com/xzeu/tz/blob/main/docs/zh/unit_testing.md)
 
 
-[进入英文版](https://github.com/go-nunu/nunu/blob/main/docs/en/tutorial.md)
+[进入英文版](https://github.com/xzeu/tz/blob/main/docs/en/tutorial.md)
 
-# Nunu框架使用教程
+# Tz框架使用教程
 
-Nunu是一个基于Go语言的Web框架，它提供了一套优雅的项目结构和命令操作，使得开发者可以更加高效地开发Web应用程序。
+Tz是一个基于Go语言的Web框架，它提供了一套优雅的项目结构和命令操作，使得开发者可以更加高效地开发Web应用程序。
 
 
 ## 要求
-要使用Nunu 高级Layout，您需要在系统上安装以下软件：
+要使用Tz 高级Layout，您需要在系统上安装以下软件：
 
 * Golang 1.19或更高版本
 * Git
@@ -22,13 +22,13 @@ Nunu是一个基于Go语言的Web框架，它提供了一套优雅的项目结�
 
 ## 安装
 
-在开始使用Nunu之前，需要先安装它。可以通过以下命令进行安装：
+在开始使用Tz之前，需要先安装它。可以通过以下命令进行安装：
 
 
 
 ```bash
 
-go install github.com/go-nunu/nunu@latest
+go install github.com/xzeu/tz@latest
 ```
 
 国内用户可以使用`GOPROXY`加速`go install`
@@ -37,44 +37,44 @@ $ go env -w GO111MODULE=on
 $ go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
-> tips: 如果`go install`成功，却提示找不到nunu命令，这是因为环境变量没有配置，可以把 GOBIN 目录配置到环境变量中即可
+> tips: 如果`go install`成功，却提示找不到tz命令，这是因为环境变量没有配置，可以把 GOBIN 目录配置到环境变量中即可
 
 
 
 ## 创建项目
 
-使用Nunu创建一个新项目非常简单，只需要在命令行中输入以下命令：
+使用Tz创建一个新项目非常简单，只需要在命令行中输入以下命令：
 
 ```bash
-nunu new projectName
+tz new projectName
 ```
 其中`projectName`是你想要创建的项目名称,**这里我们选择Advanced Layout**
 
 **国内加速源：**
 
-`nunu new`默认拉取github源，你也可以使用国内加速仓库
+`tz new`默认拉取github源，你也可以使用国内加速仓库
 ```
 // 使用高级模板(推荐)
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-advanced.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-advanced.git
 
 // 使用基础模板
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-basic.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-basic.git
 ```
 
 
-执行完上述命令后，Nunu会自动创建一个目录结构优雅的Go项目，包含了一些常用的文件和目录。
+执行完上述命令后，Tz会自动创建一个目录结构优雅的Go项目，包含了一些常用的文件和目录。
 
 ## 创建组件
 
-在Nunu中，可以使用以下命令批量创建Handler、Service、Repository、Model组件：
+在Tz中，可以使用以下命令批量创建Handler、Service、Repository、Model组件：
 
 ```bash
-nunu create all order
+tz create all order
 ```
 
 其中，`order`是你想要创建的组件名称。
 
-执行完上述命令后，Nunu会自动在对应目录创建组件，并写入对应的结构体和一些常用的方法。
+执行完上述命令后，Tz会自动在对应目录创建组件，并写入对应的结构体和一些常用的方法。
 ```
 // 日志信息
 Created new handler: internal/handler/order.go
@@ -149,10 +149,10 @@ func newApp(*viper.Viper, *log.Logger) (*gin.Engine, func(), error) {
 ```
 ## 编译Wire
 
-在Nunu中，可以使用以下命令编译Wire：
+在Tz中，可以使用以下命令编译Wire：
 
 ```bash
-nunu wire all
+tz wire all
 ```
 
 执行完上述命令后，我们选择`cmd/server/wire.go`文件，生成对应的`wire_gen.go`文件。
@@ -186,7 +186,7 @@ func NewApp(viperViper *viper.Viper, logger *log.Logger) (*gin.Engine, func(), e
 
 ```
 
-至此，我们已经走完了Nunu项目中的核心流程，
+至此，我们已经走完了Tz项目中的核心流程，
 
 接下来，你需要修改`config/local.yml`中的Mysql和Redis配置信息，
 
@@ -199,27 +199,27 @@ internal/model/order.go              // 数据表实体，GORM model
 ```
 
 ## 启动项目
-最后，在Nunu中，可以使用以下命令启动项目：
+最后，在Tz中，可以使用以下命令启动项目：
 
 ```bash
 // 请先修改config/local.yml中的 MySQL 和 Redis 配置信息
 
 // 初次启动server之前，请先执行以下数据库迁移
-nunu run ./cmd/migration  
+tz run ./cmd/migration  
 
  // 启动server
-nunu run ./cmd/server    
+tz run ./cmd/server    
 
 // 或
 
-nunu run
+tz run
 
 // 或
 
- nunu run ./cmd/server  --excludeDir=".git,.idea,tmp,vendor" --includeExt="go,yml,vue"  -- --conf=./config/local.yml
+ tz run ./cmd/server  --excludeDir=".git,.idea,tmp,vendor" --includeExt="go,yml,vue"  -- --conf=./config/local.yml
 ```
 
-执行完上述命令后，Nunu会自动启动项目，并监听文件更新，支持热重启。
+执行完上述命令后，Tz会自动启动项目，并监听文件更新，支持热重启。
 
 
 ## 自动化生成Swagger文档
@@ -264,4 +264,4 @@ http://127.0.0.1:8000/swagger/index.html
 
 ## 总结
 
-Nunu框架提供了一套优雅的项目结构和命令操作，使得开发者可以更加高效地开发Web应用程序。通过本教程，你已经学会了如何使用Nunu创建项目、创建Handler、创建Service、创建Repository、编译Wire和启动项目。希望这些内容能够帮助你更好地使用Nunu框架。
+Tz框架提供了一套优雅的项目结构和命令操作，使得开发者可以更加高效地开发Web应用程序。通过本教程，你已经学会了如何使用Tz创建项目、创建Handler、创建Service、创建Repository、编译Wire和启动项目。希望这些内容能够帮助你更好地使用Tz框架。

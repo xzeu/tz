@@ -1,21 +1,21 @@
-# Nunu — A CLI tool for building go applications.
+# Tz — A CLI tool for building go applications.
 
 
-Nunu是一个基于Golang的应用脚手架，它的名字来自于英雄联盟中的游戏角色，一个骑在雪怪肩膀上的小男孩。和努努一样，该项目也是站在巨人的肩膀上，它是由Golang生态中各种非常流行的库整合而成的，它们的组合可以帮助你快速构建一个高效、可靠的应用程序。
+Tz是一个基于Golang的应用脚手架，它的名字来自于英雄联盟中的游戏角色，一个骑在雪怪肩膀上的小男孩。和努努一样，该项目也是站在巨人的肩膀上，它是由Golang生态中各种非常流行的库整合而成的，它们的组合可以帮助你快速构建一个高效、可靠的应用程序。
 
 🚀Tips：这个项目非常完善，所以更新不会很频繁，欢迎大家使用。
 
-- [英文介绍](https://github.com/go-nunu/nunu/blob/main/README.md)
-- [Português](https://github.com/go-nunu/nunu/blob/main/README_pt.md)
+- [英文介绍](https://github.com/xzeu/tz/blob/main/README.md)
+- [Português](https://github.com/xzeu/tz/blob/main/README_pt.md)
 
-![Nunu](https://github.com/go-nunu/nunu/blob/main/.github/assets/banner.png)
+![Tz](https://github.com/xzeu/tz/blob/main/.github/assets/banner.png)
 
 ## 文档
-* [使用指南](https://github.com/go-nunu/nunu/blob/main/docs/zh/guide.md)
-* [分层架构](https://github.com/go-nunu/nunu/blob/main/docs/zh/architecture.md)
-* [详细教程](https://github.com/go-nunu/nunu/blob/main/docs/zh/tutorial.md)
-* [高效编写单元测试](https://github.com/go-nunu/nunu/blob/main/docs/zh/unit_testing.md)
-* [MCP Server](https://github.com/go-nunu/nunu-layout-mcp/blob/main/README_zh.md)
+* [使用指南](https://github.com/xzeu/tz/blob/main/docs/zh/guide.md)
+* [分层架构](https://github.com/xzeu/tz/blob/main/docs/zh/architecture.md)
+* [详细教程](https://github.com/xzeu/tz/blob/main/docs/zh/tutorial.md)
+* [高效编写单元测试](https://github.com/xzeu/tz/blob/main/docs/zh/unit_testing.md)
+* [MCP Server](https://github.com/xzeu/tz-layout-mcp/blob/main/README_zh.md)
 
 ## 功能
 - **Gin**: https://github.com/gin-gonic/gin
@@ -37,26 +37,26 @@ Nunu是一个基于Golang的应用脚手架，它的名字来自于英雄联盟�
 
 - More...
 ## 特性
-* **超低学习成本和定制**：Nunu封装了Gopher最熟悉的一些流行库。您可以轻松定制应用程序以满足特定需求。
-* **高性能和可扩展性**：Nunu旨在具有高性能和可扩展性。它使用最新的技术和最佳实践，确保您的应用程序可以处理高流量和大量数据。
-* **安全可靠**：Nunu使用了稳定可靠的第三方库，确保您的应用程序安全可靠。
-* **模块化和可扩展**：Nunu旨在具有模块化和可扩展性。您可以通过使用第三方库或编写自己的模块轻松添加新功能和功能。
-* **文档完善和测试完备**：Nunu文档完善，测试完备。它提供了全面的文档和示例，帮助您快速入门。它还包括一套测试套件，确保您的应用程序按预期工作。
+* **超低学习成本和定制**：Tz封装了Gopher最熟悉的一些流行库。您可以轻松定制应用程序以满足特定需求。
+* **高性能和可扩展性**：Tz旨在具有高性能和可扩展性。它使用最新的技术和最佳实践，确保您的应用程序可以处理高流量和大量数据。
+* **安全可靠**：Tz使用了稳定可靠的第三方库，确保您的应用程序安全可靠。
+* **模块化和可扩展**：Tz旨在具有模块化和可扩展性。您可以通过使用第三方库或编写自己的模块轻松添加新功能和功能。
+* **文档完善和测试完备**：Tz文档完善，测试完备。它提供了全面的文档和示例，帮助您快速入门。它还包括一套测试套件，确保您的应用程序按预期工作。
 
 ## 交流群组
 
-微信入群，请备注Nunu
+微信入群，请备注Tz
 
-<p align="left"><img src="https://github.com/go-nunu/nunu/blob/main/.github/assets/qrcode.jpg" width="200"></p>
+<p align="left"><img src="https://github.com/xzeu/tz/blob/main/.github/assets/qrcode.jpg" width="200"></p>
 
 ## 简洁分层架构
-Nunu采用了经典的分层架构。同时，为了更好地实现模块化和解耦，采用了依赖注入框架`Wire`。
+Tz采用了经典的分层架构。同时，为了更好地实现模块化和解耦，采用了依赖注入框架`Wire`。
 
-![Nunu Layout](https://github.com/go-nunu/nunu/blob/main/.github/assets/layout.png)
+![Tz Layout](https://github.com/xzeu/tz/blob/main/.github/assets/layout.png)
 
-## Nunu CLI
+## Tz CLI
 
-![Nunu](https://github.com/go-nunu/nunu/blob/main/.github/assets/screenshot.jpg)
+![Tz](https://github.com/xzeu/tz/blob/main/.github/assets/screenshot.jpg)
 
 
 
@@ -127,7 +127,7 @@ Nunu采用了经典的分层架构。同时，为了更好地实现模块化和�
 此外，还包含了一些其他的文件和目录，如授权文件、构建文件、README等。整体上，该项目的架构清晰，各个模块之间的职责明确，便于理解和维护。
 
 ## 要求
-要使用Nunu，您需要在系统上安装以下软件：
+要使用Tz，您需要在系统上安装以下软件：
 
 * Golang 1.19或更高版本
 * Git
@@ -139,10 +139,10 @@ Nunu采用了经典的分层架构。同时，为了更好地实现模块化和�
 
 ### 安装
 
-您可以通过以下命令安装Nunu：
+您可以通过以下命令安装Tz：
 
 ```bash
-go install github.com/go-nunu/nunu@latest
+go install github.com/xzeu/tz@latest
 ```
 
 国内用户可以使用`GOPROXY`加速`go install`
@@ -152,7 +152,7 @@ $ go env -w GO111MODULE=on
 $ go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
-> tips: 如果`go install`成功，却提示找不到nunu命令，这是因为环境变量没有配置，可以把 GOBIN 目录配置到环境变量中即可
+> tips: 如果`go install`成功，却提示找不到tz命令，这是因为环境变量没有配置，可以把 GOBIN 目录配置到环境变量中即可
 
 
 ### 创建新项目
@@ -161,32 +161,32 @@ $ go env -w GOPROXY=https://goproxy.cn,direct
 
 ```bash
 // 推荐新用户选择Advanced Layout
-nunu new projectName
+tz new projectName
 ```
 
-`nunu new`默认拉取github源，你也可以使用国内加速仓库
+`tz new`默认拉取github源，你也可以使用国内加速仓库
 ```
 // 使用高级模板(推荐)
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-advanced.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-advanced.git
 
 // 使用基础模板
-nunu new projectName -r https://gitee.com/go-nunu/nunu-layout-basic.git
+tz new projectName -r https://gitee.com/xzeu/tz-layout-basic.git
 
 ```
 
 
-> Nunu内置了两种类型的Layout：
+> Tz内置了两种类型的Layout：
 
 * **基础模板(Basic Layout)**
 
-Basic Layout 包含一个非常精简的架构目录结构，适合非常熟悉Nunu项目的开发者使用。
+Basic Layout 包含一个非常精简的架构目录结构，适合非常熟悉Tz项目的开发者使用。
 
 * **高级模板(Advanced Layout)**
 
 **建议：我们推荐新手优先选择使用Advanced Layout。**
 
 
-Advanced Layout 包含了很多Nunu的用法示例（ db、redis、 jwt、 cron、 migration等），适合开发者快速学习了解Nunu的架构思想。
+Advanced Layout 包含了很多Tz的用法示例（ db、redis、 jwt、 cron、 migration等），适合开发者快速学习了解Tz的架构思想。
 
 此命令将创建一个名为`projectName`的目录，并在其中生成一个优雅的Golang项目结构。
 
@@ -195,14 +195,14 @@ Advanced Layout 包含了很多Nunu的用法示例（ db、redis、 jwt、 cron�
 您可以使用以下命令为项目创建handler、service、repository和model等组件：
 
 ```bash
-nunu create handler user
-nunu create service user
-nunu create repository user
-nunu create model user
+tz create handler user
+tz create service user
+tz create repository user
+tz create model user
 ```
 或
 ```
-nunu create all user
+tz create all user
 ```
 这些命令将分别创建一个名为`UserHandler`、`UserService`、`UserRepository`和`UserModel`的组件，并将它们放置在正确的目录中。
 
@@ -211,7 +211,7 @@ nunu create all user
 您可以使用以下命令快速启动项目：
 
 ```bash
-nunu run
+tz run
 ```
 
 此命令将启动您的Golang项目，并支持文件更新热重启。
@@ -221,7 +221,7 @@ nunu run
 您可以使用以下命令快速编译`wire.go`：
 
 ```bash
-nunu wire
+tz wire
 ```
 
 此命令将编译您的`wire.go`文件，并生成所需的依赖项。
@@ -232,9 +232,9 @@ nunu wire
 
 ## 许可证
 
-Nunu是根据MIT许可证发布的。有关更多信息，请参见[LICENSE](LICENSE)文件。
+Tz是根据MIT许可证发布的。有关更多信息，请参见[LICENSE](LICENSE)文件。
 
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=go-nunu/nunu&type=Date)](https://star-history.com/#go-nunu/nunu&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=xzeu/tz&type=Date)](https://star-history.com/#xzeu/tz&Date)

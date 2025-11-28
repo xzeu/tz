@@ -15,12 +15,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/go-nunu/nunu/config"
+	"github.com/xzeu/tz/config"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/fsnotify/fsnotify"
-	"github.com/go-nunu/nunu/internal/pkg/helper"
 	"github.com/spf13/cobra"
+	"github.com/xzeu/tz/internal/pkg/helper"
 )
 
 var quit = make(chan os.Signal, 1)
@@ -33,9 +33,9 @@ var includeExt string
 var buildFlags string
 
 func init() {
-	CmdRun.Flags().StringVarP(&excludeDir, "excludeDir", "", excludeDir, `eg: nunu run --excludeDir="tmp,vendor,.git,.idea"`)
-	CmdRun.Flags().StringVarP(&includeExt, "includeExt", "", includeExt, `eg: nunu run --includeExt="go,tpl,tmpl,html,yaml,yml,toml,ini,json"`)
-	CmdRun.Flags().StringVarP(&buildFlags, "buildFlags", "", buildFlags, `eg: nunu run --buildFlags="-tags cse"`)
+	CmdRun.Flags().StringVarP(&excludeDir, "excludeDir", "", excludeDir, `eg: tz run --excludeDir="tmp,vendor,.git,.idea"`)
+	CmdRun.Flags().StringVarP(&includeExt, "includeExt", "", includeExt, `eg: tz run --includeExt="go,tpl,tmpl,html,yaml,yml,toml,ini,json"`)
+	CmdRun.Flags().StringVarP(&buildFlags, "buildFlags", "", buildFlags, `eg: tz run --buildFlags="-tags cse"`)
 	if excludeDir == "" {
 		excludeDir = config.RunExcludeDir
 	}
@@ -46,9 +46,9 @@ func init() {
 
 var CmdRun = &cobra.Command{
 	Use:     "run",
-	Short:   "nunu run [main.go path]",
-	Long:    "nunu run [main.go path]",
-	Example: "nunu run cmd/server",
+	Short:   "tz run [main.go path]",
+	Long:    "tz run [main.go path]",
+	Example: "tz run cmd/server",
 	Run: func(cmd *cobra.Command, args []string) {
 		cmdArgs, programArgs := helper.SplitArgs(cmd, args)
 		var dir string
@@ -95,7 +95,7 @@ var CmdRun = &cobra.Command{
 			}
 		}
 		signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
-		fmt.Printf("\033[35mNunu run %s.\033[0m\n", dir)
+		fmt.Printf("\033[35mTz run %s.\033[0m\n", dir)
 		fmt.Printf("\033[35mWatch excludeDir %s\033[0m\n", excludeDir)
 		fmt.Printf("\033[35mWatch includeExt %s\033[0m\n", includeExt)
 		fmt.Printf("\033[35mWatch buildFlags %s\033[0m\n", buildFlags)

@@ -2,16 +2,17 @@ package create
 
 import (
 	"fmt"
-	"github.com/duke-git/lancet/v2/strutil"
-	"github.com/go-nunu/nunu/internal/pkg/helper"
-	"github.com/go-nunu/nunu/tpl"
-	"github.com/spf13/cobra"
 	"log"
 	"os"
 	"path"
 	"path/filepath"
 	"strings"
 	"text/template"
+
+	"github.com/duke-git/lancet/v2/strutil"
+	"github.com/spf13/cobra"
+	"github.com/xzeu/tz/internal/pkg/helper"
+	"github.com/xzeu/tz/tpl"
 )
 
 type Create struct {
@@ -33,7 +34,7 @@ func NewCreate() *Create {
 var CmdCreate = &cobra.Command{
 	Use:     "create [type] [handler-name]",
 	Short:   "Create a new handler/service/repository/model",
-	Example: "nunu create handler user",
+	Example: "tz create handler user",
 	Args:    cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 
@@ -55,35 +56,35 @@ func init() {
 var CmdCreateHandler = &cobra.Command{
 	Use:     "handler",
 	Short:   "Create a new handler",
-	Example: "nunu create handler user",
+	Example: "tz create handler user",
 	Args:    cobra.ExactArgs(1),
 	Run:     runCreate,
 }
 var CmdCreateService = &cobra.Command{
 	Use:     "service",
 	Short:   "Create a new service",
-	Example: "nunu create service user",
+	Example: "tz create service user",
 	Args:    cobra.ExactArgs(1),
 	Run:     runCreate,
 }
 var CmdCreateRepository = &cobra.Command{
 	Use:     "repository",
 	Short:   "Create a new repository",
-	Example: "nunu create repository user",
+	Example: "tz create repository user",
 	Args:    cobra.ExactArgs(1),
 	Run:     runCreate,
 }
 var CmdCreateModel = &cobra.Command{
 	Use:     "model",
 	Short:   "Create a new model",
-	Example: "nunu create model user",
+	Example: "tz create model user",
 	Args:    cobra.ExactArgs(1),
 	Run:     runCreate,
 }
 var CmdCreateAll = &cobra.Command{
 	Use:     "all",
 	Short:   "Create a new handler & service & repository & model",
-	Example: "nunu create all user",
+	Example: "tz create all user",
 	Args:    cobra.ExactArgs(1),
 	Run:     runCreate,
 }

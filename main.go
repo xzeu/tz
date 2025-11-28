@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/go-nunu/nunu/cmd/nunu"
+
+	"github.com/xzeu/tz/cmd/tz"
 )
 
 func main() {
-	err := nunu.Execute()
+	err := tz.Execute()
 	if err != nil {
 		fmt.Println("execute error: ", err.Error())
 	}

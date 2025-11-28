@@ -1,8 +1,8 @@
 ## 文档
-* [使用指南](https://github.com/go-nunu/nunu/blob/main/docs/zh/guide.md)
-* [分层架构](https://github.com/go-nunu/nunu/blob/main/docs/zh/architecture.md)
-* [详细教程](https://github.com/go-nunu/nunu/blob/main/docs/zh/tutorial.md)
-* [高效编写单元测试](https://github.com/go-nunu/nunu/blob/main/docs/zh/unit_testing.md)
+* [使用指南](https://github.com/xzeu/tz/blob/main/docs/zh/guide.md)
+* [分层架构](https://github.com/xzeu/tz/blob/main/docs/zh/architecture.md)
+* [详细教程](https://github.com/xzeu/tz/blob/main/docs/zh/tutorial.md)
+* [高效编写单元测试](https://github.com/xzeu/tz/blob/main/docs/zh/unit_testing.md)
 
 
 # 单元测试
@@ -83,7 +83,7 @@ Mock对象可以模拟外部模块的返回值、异常、超时等，使得测�
 3. 提高测试效率：某些外部模块可能执行耗时操作，例如网络请求、文件读写等。通过使用Mock对象，我们可以避免真实执行这些操作，从而提高测试的执行速度和效率。
 
 
-在nunu项目中，我们采用以下mock库来帮助我们编写单元测试
+在tz项目中，我们采用以下mock库来帮助我们编写单元测试
 
 * github.com/golang/mock            // google开源的mock库
 * github.com/go-redis/redismock/v9  // 提供redis查询的模拟测试，兼容github.com/redis/go-redis/v9
@@ -99,7 +99,7 @@ Mock对象可以模拟外部模块的返回值、异常、超时等，使得测�
 package repository
 
 import (
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
 )
 
 
@@ -207,7 +207,7 @@ func TestUserHandler_GetProfile(t *testing.T) {
 ```
 
 
-完整的源码位于： https://github.com/go-nunu/nunu-layout-advanced/blob/main/test/server/handler/user_test.go
+完整的源码位于： https://github.com/xzeu/tz-layout-advanced/blob/main/test/server/handler/user_test.go
 
 ## sqlmock与redismock
 
@@ -225,8 +225,8 @@ import (
 	"time"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
-	"github.com/go-nunu/nunu-layout-advanced/internal/repository"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/repository"
 	"github.com/go-redis/redismock/v9"
 	"github.com/stretchr/testify/assert"
 	"gorm.io/driver/mysql"
@@ -277,7 +277,7 @@ func TestUserRepository_GetByUsername(t *testing.T) {
 
 ```
 
-完整代码位于：https://github.com/go-nunu/nunu-layout-advanced/blob/main/test/server/repository/user_test.go
+完整代码位于：https://github.com/xzeu/tz-layout-advanced/blob/main/test/server/repository/user_test.go
 
 
 ## 测试覆盖率
@@ -293,7 +293,7 @@ go tool cover -html=./coverage.out -o coverage.html
 
 效果如下：
 
-![coverage](https://github.com/go-nunu/nunu/blob/main/.github/assets/coverage.png)
+![coverage](https://github.com/xzeu/tz/blob/main/.github/assets/coverage.png)
 
 ## 总结
 

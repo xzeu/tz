@@ -1,4 +1,4 @@
-module github.com/go-nunu/nunu
+module github.com/xzeu/tz
 
 go 1.16
 

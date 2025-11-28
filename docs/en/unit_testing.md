@@ -1,8 +1,8 @@
 ## Documentation
-* [User Guide](https://github.com/go-nunu/nunu/blob/main/docs/en/guide.md)
-* [Architecture](https://github.com/go-nunu/nunu/blob/main/docs/en/architecture.md)
-* [Getting Started Tutorial](https://github.com/go-nunu/nunu/blob/main/docs/en/tutorial.md)
-* [Efficient Unit Testing](https://github.com/go-nunu/nunu/blob/main/docs/en/unit_testing.md)
+* [User Guide](https://github.com/xzeu/tz/blob/main/docs/en/guide.md)
+* [Architecture](https://github.com/xzeu/tz/blob/main/docs/en/architecture.md)
+* [Getting Started Tutorial](https://github.com/xzeu/tz/blob/main/docs/en/tutorial.md)
+* [Efficient Unit Testing](https://github.com/xzeu/tz/blob/main/docs/en/unit_testing.md)
 
 
 # Unit Testing
@@ -83,7 +83,7 @@ Mock objects can simulate the return values, exceptions, timeouts, etc. of exter
 3. Improving test efficiency: Some external modules may perform time-consuming operations, such as network requests, file read/write operations, etc. By using mock objects, we can avoid executing these operations in reality, thereby improving the execution speed and efficiency of tests.
 
 
-In the nunu project, we use the following mocking libraries to help us write unit tests:
+In the tz project, we use the following mocking libraries to help us write unit tests:
 
 * github.com/golang/mock            // A mocking library open-sourced by Google
 * github.com/go-redis/redismock/v9  // Provides mock testing for Redis queries, compatible with github.com/redis/go-redis/v9
@@ -100,7 +100,7 @@ Some may not be familiar with what "interface-oriented programming" means. Let's
 package repository
 
 import (
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
 )
 
 
@@ -208,7 +208,7 @@ func TestUserHandler_GetProfile(t *testing.T) {
 ```
 
 
-The complete source code is located at: https://github.com/go-nunu/nunu-layout-advanced/blob/main/test/server/handler/user_test.go
+The complete source code is located at: https://github.com/xzeu/tz-layout-advanced/blob/main/test/server/handler/user_test.go
 
 ## sqlmock and redismock
 
@@ -224,8 +224,8 @@ import (
 	"time"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
-	"github.com/go-nunu/nunu-layout-advanced/internal/repository"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/repository"
 	"github.com/go-redis/redismock/v9"
 	"github.com/stretchr/testify/assert"
 	"gorm.io/driver/mysql"
@@ -276,7 +276,7 @@ func TestUserRepository_GetByUsername(t *testing.T) {
 
 ```
 
-The complete code is located at: https://github.com/go-nunu/nunu-layout-advanced/blob/main/test/server/repository/user_test.go
+The complete code is located at: https://github.com/xzeu/tz-layout-advanced/blob/main/test/server/repository/user_test.go
 
 
 ## Test Coverage
@@ -292,7 +292,7 @@ The above two commands will generate a coverage report file `coverage.html` in a
 
 The effect is as follows:
 
-![coverage](https://github.com/go-nunu/nunu/blob/main/.github/assets/coverage.png)
+![coverage](https://github.com/xzeu/tz/blob/main/.github/assets/coverage.png)
 
 ## Conclusion
 

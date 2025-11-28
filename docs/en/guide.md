@@ -1,63 +1,63 @@
 ## Documentation
-* [User Guide](https://github.com/go-nunu/nunu/blob/main/docs/en/guide.md)
-* [Architecture](https://github.com/go-nunu/nunu/blob/main/docs/en/architecture.md)
-* [Getting Started Tutorial](https://github.com/go-nunu/nunu/blob/main/docs/en/tutorial.md)
-* [Unit Testing](https://github.com/go-nunu/nunu/blob/main/docs/en/unit_testing.md)
+* [User Guide](https://github.com/xzeu/tz/blob/main/docs/en/guide.md)
+* [Architecture](https://github.com/xzeu/tz/blob/main/docs/en/architecture.md)
+* [Getting Started Tutorial](https://github.com/xzeu/tz/blob/main/docs/en/tutorial.md)
+* [Unit Testing](https://github.com/xzeu/tz/blob/main/docs/en/unit_testing.md)
 
 
-[Switch to Chinese version](https://github.com/go-nunu/nunu/blob/main/docs/zh/guide.md)
+[Switch to Chinese version](https://github.com/xzeu/tz/blob/main/docs/zh/guide.md)
 
-# Nunu User Guide
+# Tz User Guide
 
-Nunu is an application scaffolding based on Golang that helps you quickly build efficient and reliable applications. This guide will show you how to use Nunu to create and develop your applications.
+Tz is an application scaffolding based on Golang that helps you quickly build efficient and reliable applications. This guide will show you how to use Tz to create and develop your applications.
 
 ## Installation
 
-You can install Nunu using the following command:
+You can install Tz using the following command:
 
 ```bash
-go install github.com/go-nunu/nunu@latest
+go install github.com/xzeu/tz@latest
 ```
 
-> Tip: If `go install` is successful but the `nunu` command is not found, it is because the environment variable is not configured. You can configure the `GOBIN` directory in the environment variable.
+> Tip: If `go install` is successful but the `tz` command is not found, it is because the environment variable is not configured. You can configure the `GOBIN` directory in the environment variable.
 
 ## Creating a New Project
 
 You can use the following command to create a new Golang project:
 
 ```bash
-nunu new projectName
+tz new projectName
 ```
 
 This command will create a directory named `projectName` and generate an elegant Golang project structure within it.
 
 
-> Nunu provides 3 types of layouts:
+> Tz provides 3 types of layouts:
 
 * **Basic Layout**
 
-The Basic Layout contains a minimalistic directory structure and is suitable for developers who are already familiar with Nunu projects.
+The Basic Layout contains a minimalistic directory structure and is suitable for developers who are already familiar with Tz projects.
 
 * **Advanced Layout**
 
 **Recommendation: We recommend beginners to choose the Advanced Layout first.**
 
-The Advanced Layout includes many examples of using Nunu (e.g., db, redis, jwt, cron, migration, etc.), which is suitable for developers to quickly learn and understand the architectural ideas of Nunu.
+The Advanced Layout includes many examples of using Tz (e.g., db, redis, jwt, cron, migration, etc.), which is suitable for developers to quickly learn and understand the architectural ideas of Tz.
 
 * **Chat Layout**
 
-Chat Layout is a Nunu based long link project template suitable for scenarios such as instant messaging and game development.
+Chat Layout is a Tz based long link project template suitable for scenarios such as instant messaging and game development.
 
 ## Quick Start with Docker
 
-If you want to quickly try out the Nunu advanced layout, we recommend using the following commands to start the project quickly:
+If you want to quickly try out the Tz advanced layout, we recommend using the following commands to start the project quickly:
 
 ```
 cd ./deploy/docker-compose && docker compose up -d && cd ../../
 
 go run ./cmd/migration
 
-nunu run ./cmd/server
+tz run ./cmd/server
 ```
 
 Alternatively, you can use the `make` command directly:
@@ -71,26 +71,26 @@ make bootstrap
 You can use the following commands to create components such as handler, service, repository, and model for your project:
 
 ```bash
-nunu create handler user
-nunu create service user
-nunu create repository user
-nunu create model user
+tz create handler user
+tz create service user
+tz create repository user
+tz create model user
 ```
 
 These commands will create components named `UserHandler`, `UserService`, `UserRepository`, and `UserModel`, and place them in the correct directories.
 
 If you want to create the corresponding components in a custom directory, you can do so as follows:
 ```bash
-nunu create handler internal/handler/user/center
-nunu create service internal/service/user/center
-nunu create repository internal/repository/user/center
-nunu create model internal/model/user/center
+tz create handler internal/handler/user/center
+tz create service internal/service/user/center
+tz create repository internal/repository/user/center
+tz create model internal/model/user/center
 ```
 
 You can also use the following command to create all components (handler, service, repository, and model) at once:
 
 ```bash
-nunu create all user
+tz create all user
 ```
 
 ## Starting the Project
@@ -100,7 +100,7 @@ You can quickly start the project using the following command:
 ```bash
 // Equivalent to go run ./cmd/server
 
-nunu run
+tz run
 ```
 
 This command will start your Golang project and support hot-reload when files are updated.
@@ -111,7 +111,7 @@ You can quickly compile `wire.go` using the following command:
 
 ```bash
 // Equivalent to cd cmd/server && wire
-nunu wire
+tz wire
 ```
 
 This command will automatically search for the `wire.go` file in your project and compile the required dependencies.
@@ -119,16 +119,16 @@ This command will automatically search for the `wire.go` file in your project an
 ## Configuration File
 
 ### Starting with a Specific Configuration File
-Nunu uses the Viper library to manage configuration files.
+Tz uses the Viper library to manage configuration files.
 
 By default, it loads `config/local.yml`, but you can specify the configuration file path using environment variables or parameters.
 
 ```
 // Linux or MacOS
-APP_CONF=config/prod.yml nunu run
+APP_CONF=config/prod.yml tz run
 
 // Windows
-set APP_CONF=config\prod.yml && nunu run
+set APP_CONF=config\prod.yml && tz run
 ```
 Alternatively, you can use the parameter approach: `go run ./cmd/server -conf=config/prod.yml`
 
@@ -156,7 +156,7 @@ package repository
 import (
 	"context"
 	"fmt"
-	"github.com/go-nunu/nunu-layout-advanced/pkg/log"
+	"github.com/xzeu/tz-layout-advanced/pkg/log"
 	"github.com/redis/go-redis/v9"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
@@ -205,11 +205,11 @@ func NewRedis(conf *viper.Viper) *redis.Client {
 
 
 ```
-Tip: After performing dependency injection through parameters, don't forget to execute the `nunu wire` command to generate the dependency file.
+Tip: After performing dependency injection through parameters, don't forget to execute the `tz wire` command to generate the dependency file.
 
 ## Logging
 
-Nunu uses the Zap library to manage logs. You can configure the log in the `config` directory. For example:
+Tz uses the Zap library to manage logs. You can configure the log in the `config` directory. For example:
 
 ```yaml
 log:
@@ -229,8 +229,8 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/go-nunu/nunu-layout-basic/internal/service"
-	"github.com/go-nunu/nunu-layout-basic/pkg/helper/resp"
+	"github.com/xzeu/tz-layout-basic/internal/service"
+	"github.com/xzeu/tz-layout-basic/pkg/helper/resp"
 	"go.uber.org/zap"
 	"net/http"
 )
@@ -248,7 +248,7 @@ func (h *userHandler) GetUserById(ctx *gin.Context) {
 
 ## Database
 
-Nunu uses the GORM library to manage databases. You can configure the database in the `config` directory. For example:
+Tz uses the GORM library to manage databases. You can configure the database in the `config` directory. For example:
 
 ```yaml
 data:
@@ -268,7 +268,7 @@ You can connect to the database using the following code:
 package repository
 
 import (
-	"github.com/go-nunu/nunu-layout-advanced/internal/model"
+	"github.com/xzeu/tz-layout-advanced/internal/model"
 )
 
 
@@ -295,7 +295,7 @@ func (r *userRepository) FirstById(id int64) (*model.User, error) {
 
 ```
 
-It is important to note that `xxxRepository`, `xxxService`, `xxxHandler`, etc. in Nunu are implemented based on interfaces. This is known as **interface-oriented programming**, which can improve code flexibility, scalability, testability, and maintainability. It is a programming style highly recommended in the Go language.
+It is important to note that `xxxRepository`, `xxxService`, `xxxHandler`, etc. in Tz are implemented based on interfaces. This is known as **interface-oriented programming**, which can improve code flexibility, scalability, testability, and maintainability. It is a programming style highly recommended in the Go language.
 
 In the above code, we wrote:
 ```
@@ -312,17 +312,17 @@ type UserRepository struct {
 	*Repository
 }
 ```
-> Tip: The unit tests in the Nunu advanced layout are based on the characteristics of `interface` for mock operations.
+> Tip: The unit tests in the Tz advanced layout are based on the characteristics of `interface` for mock operations.
 
 ## Testing
 
-Nunu uses libraries such as testify, redismock, gomock, and go-sqlmock to write tests.
+Tz uses libraries such as testify, redismock, gomock, and go-sqlmock to write tests.
 
 You can run the test using the following command:
 
 ```bash
-go test -coverpkg=./internal/handler,./internal/service,./internal/repository -coverprofile=./.nunu/coverage.out ./test/server/...
-go tool cover -html=./.nunu/coverage.out -o coverage.html
+go test -coverpkg=./internal/handler,./internal/service,./internal/repository -coverprofile=./.tz/coverage.out ./test/server/...
+go tool cover -html=./.tz/coverage.out -o coverage.html
 
 ```
 
@@ -330,4 +330,4 @@ The above command will generate an HTML file named `coverage.html`. You can open
 
 ## Conclusion
 
-Nunu is a practical Golang application scaffolding that helps you quickly build efficient and reliable applications. We hope this guide can help you make better use of Nunu.
+Tz is a practical Golang application scaffolding that helps you quickly build efficient and reliable applications. We hope this guide can help you make better use of Tz.
